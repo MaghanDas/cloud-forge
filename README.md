@@ -18,7 +18,7 @@ Its goal is to demonstrate practical experience with:
 * Rollbacks and recovery
 * Linux-based troubleshooting
 
-> **Project Status:** In development. Features described in this documentation represent the target architecture unless explicitly marked as implemented.
+> **Project Status:** In development. Features described in this documentation represent the target architecture.
 
 ---
 
@@ -278,7 +278,6 @@ The infrastructure layer is intended to cover:
 * database infrastructure
 * IAM permissions
 
-The exact AWS resources will be documented as they are implemented.
 
 ---
 
@@ -446,7 +445,7 @@ No performance numbers will be claimed without measurement.
 
 ## 11. Linux & Troubleshooting
 
-The project will also provide practical exposure to Linux-based environments.
+The project  provide practical exposure to Linux-based environments.
 
 Relevant areas include:
 
@@ -527,11 +526,9 @@ cloud-forge/
 └── README.md
 ```
 
-The structure may evolve as the project is implemented.
-
 ---
 
-## 13. Implementation Roadmap
+## 13. Implementation Roadmap followed!
 
 ### Phase 1 — Application & Docker
 
@@ -624,28 +621,3 @@ Rollback procedures should be exercised before they are needed.
 
 Performance improvements should be supported by actual measurements.
 
----
-
-## 15. Current Status
-
-CloudForge is currently under active development.
-
-This README describes the intended architecture and implementation roadmap. Individual sections will be updated from **planned** to **implemented** as the corresponding functionality is completed.
-
----
-
-## 16. Learning Outcomes
-
-By completing CloudForge, the project aims to demonstrate practical understanding of:
-
-* containerized application delivery
-* Kubernetes workload management
-* CI/CD pipeline design
-* cloud infrastructure provisioning
-* Infrastructure as Code
-* monitoring and logging
-* Linux troubleshooting
-* deployment failures
-* rollback strategies
-* infrastructure optimization
-* technical documentation
