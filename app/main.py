@@ -1,3 +1,5 @@
+from typing import Annotated
+
 from fastapi import Depends, FastAPI
 from sqlalchemy.orm import Session
 
@@ -11,22 +13,20 @@ app = FastAPI(
     version="1.0.0",
 )
 
+DBSession = Annotated[Session, Depends(get_db)]
+
 
 @app.get("/health")
 def health():
-    return {
-        "status": "healthy"
-    }
+    return {"status": "healthy"}
 
 
 @app.post("/items", response_model=schemas.ItemResponse)
 def create_item(
     item: schemas.ItemCreate,
-    db: Session = Depends(get_db),
+    db: DBSession,
 ):
-    db_item = models.Item(
-        name=item.name
-    )
+    db_item = models.Item(name=item.name)
 
     db.add(db_item)
     db.commit()
@@ -37,6 +37,6 @@ def create_item(
 
 @app.get("/items", response_model=list[schemas.ItemResponse])
 def get_items(
-    db: Session = Depends(get_db),
+    db: DBSession,
 ):
     return db.query(models.Item).all()
